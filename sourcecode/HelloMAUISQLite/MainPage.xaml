@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:HelloMAUI.Model"
+             xmlns:viewmodel="clr-namespace:HelloMAUI.ViewModel"
+             x:Class="HelloMAUI.MainPage"
+             x:DataType="viewmodel:MainViewModel">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddTodoCommand}" />
+    </ContentPage.ToolbarItems>
+
+
+    <RefreshView Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}">
+
+        <VerticalStackLayout
+            Spacing="15"
+            Padding="15,20"
+            VerticalOptions="CenterAndExpand">
+
+            <Frame Padding="15" BackgroundColor="AliceBlue" HasShadow="True">
+
+                <ListView ItemsSource="{Binding ToDoItems}" 
+                          SeparatorVisibility="Default" 
+                          SeparatorColor="LightGrey">
+                    <ListView.Header>
+                        <StackLayout BackgroundColor="Transparent">
+                            <Label Margin="10,0,0,0"
+                                   Text="TO-DO ITEMS"
+                                   FontSize="12"
+                                   FontAttributes="Bold" />
+                            <BoxView Grid.Row="1" Color="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand" />
+                        </StackLayout>
+
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="model:ToDoItem">
+                            <ViewCell>
+                                <Grid Padding="10">
+
+                                    <Grid.RowDefinitions>
+
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Column="0"
+                                           Text="{Binding Id}"                                   
+                                           FontSize="10"
+                                           HorizontalOptions="StartAndExpand"
+                                           VerticalTextAlignment="Center"/>
+
+                                    <Label Grid.Column="1"
+                                           Text="{Binding ToDoText}"                                   
+                                           FontSize="10"
+                                           HorizontalOptions="StartAndExpand"
+                                           VerticalTextAlignment="Center"/>
+
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </Frame>
+
+            <Button Text="Add"
+                Command="{Binding AddTodoCommand}"
+                Grid.Row="1"
+                Margin="5" />
+
+            <Button Text="Get"
+                Command="{Binding GetAllTodoItemsCommand}"
+                Grid.Row="1"
+                Margin="5" />
+
+        </VerticalStackLayout>
+    </RefreshView>
+</ContentPage>

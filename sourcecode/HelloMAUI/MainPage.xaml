@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:HelloMAUI.Model"
+             xmlns:viewmodel="clr-namespace:HelloMAUI.ViewModel"
+             x:Class="HelloMAUI.MainPage"
+             x:DataType="viewmodel:MainViewModel">
+
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="15"
+            Padding="15,0"
+            VerticalOptions="Center">
+
+                        
+            <Image Source="{Binding CurrentIcon}"
+                Aspect="AspectFit"
+                HeightRequest="100"
+                WidthRequest="100" />
+
+            <Label
+                Text="{Binding CurrentCity}"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="15"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="{Binding CurrentTemp,StringFormat='{0}&#186;'}"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="40"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="{Binding CurrentCondition}"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="10"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="{Binding FeelsLike,StringFormat='Feels like: {0}&#186;'}"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="10"
+                HorizontalOptions="Center" />
+
+            
+
+            <Frame Padding="5" BackgroundColor="AliceBlue" HasShadow="True">
+
+                <CollectionView ItemsSource="{Binding TenDayForecast}" 
+                                Header="{Binding TenDayForecast}">
+                    <CollectionView.HeaderTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />                                    
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" FontSize="10" Text="10-DAY FORECAST" Padding="5" />
+                                <BoxView Grid.Row="1" Color="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand" />
+
+                            </Grid>
+                            
+                        </DataTemplate>
+                    </CollectionView.HeaderTemplate>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:ForecastDay">
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="0"
+                                   Text="{Binding DayOfWeek}"
+                                   FontSize="12"
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="StartAndExpand" />
+
+                                <Image Grid.Column="1"
+                                   Source="{Binding ImageUrl}"
+                                   Aspect="AspectFill"
+                                   HeightRequest="20"
+                                   WidthRequest="20" />
+
+
+                                <Label Grid.Column="2"
+                                   Text="{Binding MinTemp,StringFormat='{0}&#186;'}"                                   
+                                   FontSize="10"
+                                   HorizontalOptions="EndAndExpand"
+                                   VerticalTextAlignment="Center"/>
+
+                                
+                                <Label Grid.Column="4"
+                                   Text="{Binding MaxTemp,StringFormat='{0}&#186;'}"                                   
+                                   FontSize="10"
+                                   HorizontalOptions="EndAndExpand"
+                                   VerticalTextAlignment="Center"/>
+
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                
+            </Frame>
+
+            <Button Text="Refresh"
+                Command="{Binding GetWeatherCommand}"
+                Grid.Row="1"
+                Margin="5" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
