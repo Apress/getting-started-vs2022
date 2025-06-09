@@ -1,13 +1,10 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28729.10
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36109.1 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipmentLocator", "ShipmentLocator.csproj", "{BC4DB6BE-5F70-4BD9-9BA6-8F48A0C155CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShipmentLocator", "ShipmentLocator.csproj", "{BC4DB6BE-5F70-4BD9-9BA6-8F48A0C155CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipMethodLogic", "..\ShipmentTracking\ShipMethodLogic.csproj", "{C1C79E2E-935A-42F6-8A4A-E479ABD62F98}"
-EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Tracking", "..\Tracking\Tracking.vbproj", "{E08ADEE6-3AEF-4A7F-81E1-5354A52ABBBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShipMethodLogic", "..\ShipmentTracking\ShipMethodLogic.csproj", "{C1C79E2E-935A-42F6-8A4A-E479ABD62F98}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualStudioProductivity", "..\ProductivityInVS\VisualStudioProductivity.csproj", "{14B50EF6-5BFB-4672-A9DF-0E1C44791283}"
 EndProject
@@ -29,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualStudioTests", "..\Vis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualStudioUnitTesting.Tests", "..\VisualStudioUnitTesting.Tests01\VisualStudioUnitTesting.Tests.csproj", "{5E6BDD12-C52B-4EFF-A61F-7B8378F21E93}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Tracking", "..\Tracking\Tracking.vbproj", "{D85BCA29-6410-4B3E-9511-766EB6562D37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,10 +42,6 @@ Global
 		{C1C79E2E-935A-42F6-8A4A-E479ABD62F98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1C79E2E-935A-42F6-8A4A-E479ABD62F98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1C79E2E-935A-42F6-8A4A-E479ABD62F98}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E08ADEE6-3AEF-4A7F-81E1-5354A52ABBBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E08ADEE6-3AEF-4A7F-81E1-5354A52ABBBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E08ADEE6-3AEF-4A7F-81E1-5354A52ABBBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E08ADEE6-3AEF-4A7F-81E1-5354A52ABBBF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{14B50EF6-5BFB-4672-A9DF-0E1C44791283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{14B50EF6-5BFB-4672-A9DF-0E1C44791283}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14B50EF6-5BFB-4672-A9DF-0E1C44791283}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -75,6 +70,10 @@ Global
 		{5E6BDD12-C52B-4EFF-A61F-7B8378F21E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E6BDD12-C52B-4EFF-A61F-7B8378F21E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E6BDD12-C52B-4EFF-A61F-7B8378F21E93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D85BCA29-6410-4B3E-9511-766EB6562D37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D85BCA29-6410-4B3E-9511-766EB6562D37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D85BCA29-6410-4B3E-9511-766EB6562D37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D85BCA29-6410-4B3E-9511-766EB6562D37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

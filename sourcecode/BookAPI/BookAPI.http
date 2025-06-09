@@ -1,0 +1,28 @@
+@base_address = https://reqres.in/api
+
+###  
+# 1) Define your login credentials as variables
+@username = eve.holt@reqres.in
+@password = cityslicka
+
+###  
+# 2) Login request – name it "login" to capture the response
+# @name login
+POST {{base_address}}/login
+Content-Type: application/json
+x-api-key: reqres-free-v1
+
+{
+  "email": "{{username}}",
+  "password": "{{password}}"
+}
+
+###
+
+# 3) Protected call – reuse the extracted token
+GET {{base_address}}/users/1
+Authorization: Bearer {{login.response.body.$.token}}
+x-api-key: reqres-free-v1
+
+###
+

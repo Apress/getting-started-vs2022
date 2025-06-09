@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
-using static elysium.crypt.crypto;
+//using static elysium.crypt.crypto;
 
 namespace ShipmentLocator
 {
@@ -65,6 +67,29 @@ namespace ShipmentLocator
             {
                 // Cancel the Closing event from closing the form.
                 e.Cancel = true;
+            }
+        }
+
+        private static bool ValidateEncryptedData(string clearTextValueToValidate, string encryptedDatabaseValue)
+        {
+            try
+            {
+                var arrValues = encryptedDatabaseValue.Split(':');
+                var encryptedDbValue = arrValues[0];
+                var salt = arrValues[1];
+
+                var saltedValue = Encoding.UTF8.GetBytes(salt + clearTextValueToValidate);
+
+                using (var hashstr = SHA256.Create()) // Modern, cross-platform
+                {
+                    var hash = hashstr.ComputeHash(saltedValue);
+                    var enteredValueToValidate = Convert.ToBase64String(hash);
+                    return encryptedDbValue.Equals(enteredValueToValidate);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
             }
         }
     }

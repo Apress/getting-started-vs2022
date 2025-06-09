@@ -26,12 +26,12 @@ namespace ShipmentLocator
         {
             if (!(string.IsNullOrWhiteSpace(txtWaybill.Text)))
             {
-                var waybillNum = txtWaybill.Text;
+                string waybillNum = txtWaybill.Text;
                 if (WaybillValid())
                 {
-                    var package = new Package(waybillNum);
-                                                                                                                                    
-                    var packLoc = package.TrackPackage();
+                    Package package = new Package(waybillNum);
+                    
+                    Location packLoc = package.TrackPackage();
                     if (packLoc != null)
                     {
                         txtLocationDetails.Text = $"Package location: " +
@@ -42,7 +42,7 @@ namespace ShipmentLocator
                 }
                 else
                 {
-                    _ = MessageBox.Show("You have entered an invalid Waybill number");
+                    MessageBox.Show("You have entered an invalid Waybill number");
                 }
             }
         }
@@ -63,6 +63,7 @@ namespace ShipmentLocator
             return new Random(result).Next(min, max);
         }
         
+
         private bool WaybillValid()
         {
             return txtWaybill.Text.ToLower().Contains("acme-");
@@ -93,3 +94,4 @@ namespace ShipmentLocator
         }
     }
 }
+

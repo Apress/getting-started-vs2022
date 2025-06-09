@@ -1,0 +1,12 @@
+
+GET https://httpbin.org/headers
+X-Message: {{message}}
+X-User:    {{username}}
+X-Hosturl: {{hosturl}}
+
+###
+
+
+
+
+

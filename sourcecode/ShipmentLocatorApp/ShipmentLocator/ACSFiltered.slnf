@@ -2,7 +2,10 @@
   "solution": {
     "path": "AcmeCorpShipping.sln",
     "projects": [
+      "..\\ProjectUtilities\\ProjectUtilities.csproj",
       "..\\ShipmentTracking\\ShipMethodLogic.csproj",
+      "..\\Tracking\\Tracking.vbproj",
+      "..\\VisualStudioUnitTesting\\VisualStudioUnitTesting.csproj",
       "ShipmentLocator.csproj"
     ]
   }
