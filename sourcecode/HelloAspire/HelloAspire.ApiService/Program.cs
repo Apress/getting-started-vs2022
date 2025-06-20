@@ -6,7 +6,7 @@ builder.AddRedisOutputCache("cache");
 
 // Add services to the container.
 builder.Services.AddProblemDetails();
-builder.Services.AddOutputCache();
+//builder.Services.AddOutputCache();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
@@ -37,7 +37,9 @@ app.MapGet("/weatherforecast", () =>
         .ToArray();
     return forecast;
 })
-.WithName("GetWeatherForecast");
+.WithName("GetWeatherForecast").CacheOutput(policy => policy.Expire(TimeSpan.FromSeconds(10)));
+
+app.MapGet("/", () => Results.Text("API is running", "text/plain"));
 
 app.MapDefaultEndpoints();
 
