@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "diag-tools": {
+      "commandName": "Project",
+      "remoteDebugEnabled": true,
+      "remoteDebugMachine": "192.168.255.235:4026",
+      "authenticationMode": "None"
+    }
+  }
+}
