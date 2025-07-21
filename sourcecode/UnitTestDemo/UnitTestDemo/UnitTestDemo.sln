@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36310.24 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestDemo", "UnitTestDemo.csproj", "{F05CD853-E24E-4B03-9B2B-EB49C322D41D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestInsuranceCalc", "..\TestInsuranceCalc\TestInsuranceCalc.csproj", "{C68ABAEB-D867-4B15-8534-CA5126D1AAE0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F05CD853-E24E-4B03-9B2B-EB49C322D41D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F05CD853-E24E-4B03-9B2B-EB49C322D41D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F05CD853-E24E-4B03-9B2B-EB49C322D41D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F05CD853-E24E-4B03-9B2B-EB49C322D41D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C68ABAEB-D867-4B15-8534-CA5126D1AAE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C68ABAEB-D867-4B15-8534-CA5126D1AAE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C68ABAEB-D867-4B15-8534-CA5126D1AAE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C68ABAEB-D867-4B15-8534-CA5126D1AAE0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72A72D11-6089-4D43-B08E-56A793095E13}
+	EndGlobalSection
+EndGlobal
