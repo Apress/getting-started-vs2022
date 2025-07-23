@@ -1,0 +1,36 @@
+<Playlist Version="2.0">
+  <Rule Name="Includes" Match="Any">
+    <Rule Match="All">
+      <Property Name="Solution" />
+      <Rule Match="Any">
+        <Rule Match="All">
+          <Property Name="Project" Value="TestInsuranceCalc" />
+          <Rule Match="Any">
+            <Rule Match="All">
+              <Property Name="Namespace" Value="TestInsuranceCalc" />
+              <Rule Match="Any">
+                <Rule Match="All">
+                  <Property Name="Class" Value="InsuranceCalculatorTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="PremiumCalc_YoungDriverWithAccident_ReturnsHigherPremium" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="PremiumCalc_YoungDriverWithAccident_ReturnsHigherPremium" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="PremiumCalc_SeniorDriverWithNoAccidents_ReturnsDiscountedPremium" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="PremiumCalc_SeniorDriverWithNoAccidents_ReturnsDiscountedPremium" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+              </Rule>
+            </Rule>
+          </Rule>
+        </Rule>
+      </Rule>
+    </Rule>
+  </Rule>
+</Playlist>
