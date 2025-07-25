@@ -101,26 +101,56 @@ public sealed class InsuranceCalculatorTests
 
 
 
-    [TestMethod, Timeout(2000)]
-    public void TestTimeoutOfMethod()
+    //[TestMethod, Timeout(2000)]
+    //public void TestTimeoutOfMethod()
+    //{
+    //    // Arrange
+    //    int age = 22;
+    //    int accidents = 1;
+    //    // Expected: base $500 * 2 for young driver + $100 for one accident = $1100
+    //    double expected = 1100;
+
+    //    Task.Delay(2100).Wait(); // Simulate some delay
+
+    //    // Act 
+    //    double actual = InsuranceCalculator.CalculatePremium(age, accidents);
+
+    //    // Assert
+    //    Assert.AreEqual(expected, actual, 0.0001,
+    //        "Premium for young driver with an accident should be high");
+    //}
+
+
+    private static int _retryAttempt = 0;
+
+    [TestMethod, Retry(2)]
+    public void TestRetryAttempt()
     {
-        // Arrange
-        int age = 22;
-        int accidents = 1;
-        // Expected: base $500 * 2 for young driver + $100 for one accident = $1100
-        double expected = 1100;
+        _retryAttempt++;
+        if (_retryAttempt == 1)
+        {
+            Assert.Fail("Intentional failure on first attempt.");
+        }
 
-        Task.Delay(2100).Wait(); // Simulate some delay
-
-        // Act 
-        double actual = InsuranceCalculator.CalculatePremium(age, accidents);
-
-        // Assert
-        Assert.AreEqual(expected, actual, 0.0001,
-            "Premium for young driver with an accident should be high");
+        // Succeeds on retry
+        Assert.IsTrue(true, "Test succeeded on retry.");
     }
 
-
+    [TestMethod]
+    [Description("Throws ArgumentException when age is less than 18.")]
+    [TestCategory("Premium Calculation")]
+    [Priority(1)]
+    [Owner("Dirk")]
+    [WorkItem(1234)]
+    public void TestMethodWithExpectedException()
+    {
+        // Arrange
+        int age = 16; // Invalid age
+        int accidents = 0;
+        // Act & Assert
+        Assert.ThrowsException<ArgumentException>(() => InsuranceCalculator.CalculatePremium(age, accidents),
+            "Expected ArgumentException for age less than 18.");
+    }
 
 
 
