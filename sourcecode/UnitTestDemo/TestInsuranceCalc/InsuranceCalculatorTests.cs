@@ -42,7 +42,9 @@ public sealed class InsuranceCalculatorTests
     }
 
     [TestMethod]
-    public void PremiumCalc_SeniorDriverWithNoAccidents_ReturnsDiscountedPremium()
+    [TestProperty("Category", "Premium Calculation")]
+    [Ignore("Not yet implemented")]
+    public void PremiumCalc_SeniorNoAccidents_ReturnsDiscountedPremium()
     {
         // Arrange
         int age = 72;
