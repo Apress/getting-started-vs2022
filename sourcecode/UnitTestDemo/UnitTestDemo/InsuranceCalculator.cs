@@ -34,4 +34,20 @@ public static class InsuranceCalculator
 
         return basePremium;
     }
+
+    public static string GetRiskCategory(int age, int accidents)
+    {
+        if (age < 18)
+            throw new ArgumentException("Age must be 18 or older.", nameof(age));
+        if (accidents < 0)
+            throw new ArgumentException("Accident count cannot be negative.", nameof(accidents));
+
+        if (accidents == 0 && age >= 25 && age <= 50)
+            return "Low";
+        if (accidents <= 1 && age >= 18 && age < 25)
+            return "Medium";
+        if (accidents >= 2 || age > 70)
+            return "High";
+        return "Medium";
+    }
 }

@@ -156,6 +156,24 @@ public sealed class InsuranceCalculatorTests
 
 
 
+    [TestMethod]
+    [DataRow(22, 1, "Medium")]
+    [DataRow(30, 0, "Low")]
+    [DataRow(72, 0, "High")]
+    [DataRow(40, 2, "High")]
+    public void GetRiskCategory_ReturnsExpectedCategory(int age, int accidents, string expectedCategory)
+    {
+        // Act
+        string actualCategory = InsuranceCalculator.GetRiskCategory(age, accidents);
+
+        // Assert
+        Assert.AreEqual(expectedCategory, actualCategory,
+            $"Risk category for driver age {age} with {accidents} accidents should be {expectedCategory}");
+    }
+
+
+
+
     [TestCleanup]
     public void TestCleanup()
     {
@@ -173,4 +191,5 @@ public sealed class InsuranceCalculatorTests
     {
         // Any assembly-level cleanup code if needed
     }
+    
 }
