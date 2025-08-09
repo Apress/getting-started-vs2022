@@ -162,7 +162,7 @@ public sealed class InsuranceCalculatorTests
     [DataRow(72, 0, "High")]
     [DataRow(40, 2, "High")]
     public void GetRiskCategory_ReturnsExpectedCategory(int age, int accidents, string expectedCategory)
-    {
+    {        
         // Act
         string actualCategory = InsuranceCalculator.GetRiskCategory(age, accidents);
 
